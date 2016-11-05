@@ -1,4 +1,4 @@
-package com.zsy.androidheros.view;
+﻿package com.zsy.androidheros.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -34,9 +34,6 @@ public class TimeClock extends View {
     private float x, y;
     //外圆半径
     private int r;
-    //时间刻度
-    private String[] num = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"};
-
 
     public TimeClock(Context context) {
         super(context);
@@ -66,6 +63,7 @@ public class TimeClock extends View {
         paintNum.setAntiAlias(true);
         paintNum.setTextSize(35);
         paintNum.setStyle(Paint.Style.STROKE);
+        paintNum.setTextAlign(Paint.Align.CENTER);
 
         paintSecond = new Paint();
         paintSecond.setColor(Color.RED);
@@ -108,6 +106,9 @@ public class TimeClock extends View {
         //绘制刻度
         drawLines(canvas);
 
+        //绘制整点
+        drawText(canvas);
+
         try {
             initCurrentTime(canvas);
         } catch (Exception e) {
@@ -117,6 +118,51 @@ public class TimeClock extends View {
         postInvalidateDelayed(1000);
     }
 
+
+    /**
+     * 绘制时钟刻度和分钟刻度
+     *
+     * @param canvas 画布
+     */
+    private void drawLines(Canvas canvas) {
+        for (int i = 0; i < 60; i++) {
+            if (i % 5 == 0) {
+                //绘制整点刻度
+                paint.setStrokeWidth(8);
+                canvas.drawLine(x, y - r, x, y - r + 40, paint);
+            } else {
+                //绘制分钟刻度
+                paint.setStrokeWidth(3);
+                canvas.drawLine(x, y - r, x, y - r + 30, paint);
+            }
+            //绕着(x,y)旋转6°
+            canvas.rotate(6, x, y);
+        }
+    }
+
+    /**
+     * 绘制整点数字
+     *
+     * @param canvas 画布
+     */
+    private void drawText(Canvas canvas) {
+        // 获取文字高度用于设置文本垂直居中
+        float textSize = (paintNum.getFontMetrics().bottom - paintNum.getFontMetrics().top);
+        // 数字离圆心的距离,40为刻度的长度,20文字大小
+        int distance = r - 40 - 20;
+        // 数字的坐标(a,b)
+        float a, b;
+        // 每30°写一个数字
+        for (int i = 0; i < 12; i++) {
+            a = (float) (distance * Math.sin(i * 30 * Math.PI / 180) + x);
+            b = (float) (y - distance * Math.cos(i * 30 * Math.PI / 180));
+            if (i == 0) {
+                canvas.drawText("12", a, b + textSize / 3, paintNum);
+            } else {
+                canvas.drawText(String.valueOf(i), a, b + textSize / 3, paintNum);
+            }
+        }
+    }
 
     /**
      * 获取当前系统时间
@@ -134,7 +180,7 @@ public class TimeClock extends View {
         //时针走过的角度
         int hourAngle = hour * 30 + minute / 2;
         //分针走过的角度
-        int minuteAngle = minute * 6;
+        int minuteAngle = minute * 6 + second / 10;
         //秒针走过的角度
         int secondAngle = second * 6;
 
@@ -159,28 +205,4 @@ public class TimeClock extends View {
         canvas.drawLine(x, y, x, y - r + 20, paintSecond);
     }
 
-
-    /**
-     * 绘制时钟刻度和分钟刻度
-     *
-     * @param canvas 画布
-     */
-    private void drawLines(Canvas canvas) {
-        for (int i = 0; i < 60; i++) {
-            if (i % 5 == 0) {
-                //绘制整点刻度
-                paint.setStrokeWidth(8);
-                canvas.drawLine(x, y - r, x, y - r + 40, paint);
-                //绘制数字
-                //paintNum.measureText(num)测量文字所占的大小
-                canvas.drawText(num[i / 5], x - paintNum.measureText(num[i / 5]) / 2, y - r + 70, paintNum);
-            } else {
-                //绘制分钟刻度
-                paint.setStrokeWidth(3);
-                canvas.drawLine(x, y - r, x, y - r + 30, paint);
-            }
-            //绕着(x,y)旋转6°
-            canvas.rotate(6, x, y);
-        }
-    }
 }
