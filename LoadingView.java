@@ -173,10 +173,11 @@ public class LoadingView extends View {
             canvas.drawLine(x, y - r, x, y - r + lineLength, bgPaint);
             canvas.rotate(360 / lines, x, y);
         }
+        //获取需要绘制多少个刻度
         int count = (progress * lines) / max;
-        //绘制进度
+        //绘制中间的文字进度
         canvas.drawText(progress + "%", x, y + 5, textPaint);
-        //绘制上层菊花
+        //绘制上层菊花,也就是进度
         canvas.rotate(360 / lines, x, y);
         for (; count > 0; count--) {
             canvas.drawLine(x, y - r, x, y - r + lineLength, bfPaint);
@@ -210,8 +211,14 @@ public class LoadingView extends View {
         });
         progressAnimator.start();
     }
+    
+    /*设置进度最大值*/
+    public void setMax(int max) {
+        this.max = max;
+        invalidate();
+    }
 
-    /*设置进度*/
+    /*设置当前进度*/
     public void setProgress(int progress) {
         this.progress = progress;
         invalidate();
