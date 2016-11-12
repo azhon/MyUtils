@@ -4,6 +4,5 @@
 ###2. LogUtil.java——>Log日志工具类
 ###3. ScratchCard.java——>刮刮卡效果——>效果图
 <img width="337px" height="460px"src="http://img.blog.csdn.net/20161104233422147" />
-
-
-
+###4. LoadingView.java——>菊花进度——>效果图
+![](http://i.imgur.com/PGQ8CIt.gif)
