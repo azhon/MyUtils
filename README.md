@@ -6,3 +6,5 @@
 <img width="337px" height="460px"src="http://img.blog.csdn.net/20161104233422147" />
 ###4. LoadingView.java——>菊花进度——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53143034)——>效果图
 ![](http://i.imgur.com/PGQ8CIt.gif)
+###5. WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
+<img width="369px" height="660px" src="http://img.blog.csdn.net/20161118122207199" />
