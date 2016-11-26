@@ -35,7 +35,7 @@ import android.view.animation.BounceInterpolator;
  * 文件名:     LoadingView
  * 创建者:     阿钟
  * 创建时间:   2016/11/9 22:05
- * 描述:       自定义菊花Loading旋转
+ * 描述:       自定义菊花进度条
  */
 public class LoadingView extends View {
 
