@@ -176,7 +176,7 @@ public class LoadingView extends View {
         //获取需要绘制多少个刻度
         int count = (progress * lines) / max;
         //绘制中间的文字进度
-        canvas.drawText((progress * 100) / max) + "%", x, y + 5, textPaint);
+        canvas.drawText((progress * 100 / max) + "%", x, y + 5, textPaint);
         //绘制上层菊花,也就是进度
         canvas.rotate(360 / lines, x, y);
         for (; count > 0; count--) {
