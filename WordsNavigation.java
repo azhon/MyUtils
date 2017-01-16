@@ -36,22 +36,22 @@ public class WordsNavigation extends View {
 
     public WordsNavigation(Context context) {
         super(context);
-        init();
+        init(context);
     }
 
     public WordsNavigation(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(context);
     }
 
     /**
      * 初始化画笔
      */
-    private void init() {
+    private void init(Context context) {
         wordsPaint = new Paint();
         wordsPaint.setColor(Color.parseColor("#F7F7F7"));
         wordsPaint.setAntiAlias(true);
-        wordsPaint.setTextSize(40);
+        wordsPaint.setTextSize(dip2px(context,12));
         wordsPaint.setTypeface(Typeface.DEFAULT_BOLD);
 
         bgPaint = new Paint();
@@ -117,7 +117,23 @@ public class WordsNavigation extends View {
         }
         return true;
     }
-
+    
+   /** 
+     * 根据手机的分辨率从 dip 的单位 转成为 px(像素) 
+     */  
+    public int dip2px(Context context, float dpValue) {  
+        final float scale = context.getResources().getDisplayMetrics().density;  
+        return (int) (dpValue * scale + 0.5f);  
+    }  
+  
+    /** 
+     * 根据手机的分辨率从 px(像素) 的单位 转成为 dp 
+     */  
+    public int px2dip(Context context, float pxValue) {  
+        final float scale = context.getResources().getDisplayMetrics().density;  
+        return (int) (pxValue / scale + 0.5f);  
+    }  
+    
     /*设置当前按下的是那个字母*/
     public void setTouchIndex(String word) {
         for (int i = 0; i < words.length; i++) {
