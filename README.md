@@ -18,25 +18,27 @@
 ### 5. BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)——>使用方法
 
 ```
-	public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter.BaseViewHolder> {
-	
-	    public MyAdapter(int layoutResId, List<DataBean> data) {
-	        super(layoutResId, data);
-	    }
-	
-	    @Override
-	    protected void bindTheData(BaseRecyclerAdapter.BaseViewHolder holder, DataBean data) {
-	        holder.setText(android.R.id.text1, data.getName());
-	    }
-	}
+public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter.BaseViewHolder> {
 
+    public MyAdapter(int layoutResId, List<DataBean> data) {
+        super(layoutResId, data);
+    }
+
+    @Override
+    protected void bindTheData(BaseRecyclerAdapter.BaseViewHolder holder, DataBean data) {
+        holder.setText(android.R.id.text1, data.getName());
+    }
+}
+
+```
 ---
-    MyAdapter adapter = new MyAdapter(android.R.layout.simple_list_item_1, list);
-    recyclerView.setAdapter(adapter);
-    adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
-        @Override
-        public void onItemClick(int position, View v) {
-            Toast.makeText(MainActivity.this, "点击 position = " + position, Toast.LENGTH_SHORT).show();
-        }
-    });
+```
+MyAdapter adapter = new MyAdapter(android.R.layout.simple_list_item_1, list);
+recyclerView.setAdapter(adapter);
+adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
+    @Override
+    public void onItemClick(int position, View v) {
+        Toast.makeText(MainActivity.this, "点击 position = " + position, Toast.LENGTH_SHORT).show();
+    }
+});
 ```
