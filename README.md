@@ -1,4 +1,4 @@
-﻿## 个人整理的一个工具类的集合，包括一些自定义的View
+## 个人整理的一个工具类的集合，包括一些自定义的View
 ### 1. TimeClock.java——>自定义时钟View——>[CSDN地址](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
 
 <img src="http://img.blog.csdn.net/20161105231805323" />
@@ -14,3 +14,29 @@
 ### 5. WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
 
 <img width="369px" height="660px" src="http://img.blog.csdn.net/20161118122207199" /> 
+
+### 5. BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)——>使用方法
+
+```
+	public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter.BaseViewHolder> {
+	
+	    public MyAdapter(int layoutResId, List<DataBean> data) {
+	        super(layoutResId, data);
+	    }
+	
+	    @Override
+	    protected void bindTheData(BaseRecyclerAdapter.BaseViewHolder holder, DataBean data) {
+	        holder.setText(android.R.id.text1, data.getName());
+	    }
+	}
+
+---
+    MyAdapter adapter = new MyAdapter(android.R.layout.simple_list_item_1, list);
+    recyclerView.setAdapter(adapter);
+    adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
+        @Override
+        public void onItemClick(int position, View v) {
+            Toast.makeText(MainActivity.this, "点击 position = " + position, Toast.LENGTH_SHORT).show();
+        }
+    });
+```
