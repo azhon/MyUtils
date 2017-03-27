@@ -15,7 +15,7 @@
 
 <img width="369px" height="660px" src="http://img.blog.csdn.net/20161118122207199" /> 
 
-### 5. BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)——>使用方法
+### 6. BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)
 
 ```
 public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter.BaseViewHolder> {
