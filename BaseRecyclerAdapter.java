@@ -1,4 +1,4 @@
-package com.azhong.adapter;
+package com.hjtech.rabbit.express.function;
 
 import android.support.annotation.DrawableRes;
 import android.support.v7.widget.RecyclerView;
@@ -61,7 +61,7 @@ public abstract class BaseRecyclerAdapter<D, VH extends ViewHolder> extends Recy
         //设置Item的长按事件
         holder.itemView.setOnLongClickListener(this);
         holder.itemView.setTag(position);
-        bindTheData(holder, data.get(position));
+        bindTheData(holder, data.get(position), position);
     }
 
     @Override
@@ -85,7 +85,7 @@ public abstract class BaseRecyclerAdapter<D, VH extends ViewHolder> extends Recy
      * @param holder 视图管理者
      * @param data   数据源
      */
-    protected abstract void bindTheData(VH holder, D data);
+    protected abstract void bindTheData(VH holder, D data, int position);
 
     @Override
     public void onClick(View v) {
@@ -104,7 +104,7 @@ public abstract class BaseRecyclerAdapter<D, VH extends ViewHolder> extends Recy
     /*********************************************
      * 基础视图管理者
      *********************************************/
-    class BaseViewHolder extends RecyclerView.ViewHolder {
+    public class BaseViewHolder extends ViewHolder {
         /**
          * 集合类，layout里包含的View,以view的id作为key，value是view对象
          */
