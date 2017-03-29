@@ -25,7 +25,7 @@ public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter
     }
 
     @Override
-    protected void bindTheData(BaseRecyclerAdapter.BaseViewHolder holder, DataBean data) {
+    protected void bindTheData(BaseRecyclerAdapter.BaseViewHolder holder, DataBean data, int position) {
         holder.setText(android.R.id.text1, data.getName());
     }
 }
