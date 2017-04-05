@@ -34,6 +34,8 @@ public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter
 ---
 ```
 MyAdapter adapter = new MyAdapter(android.R.layout.simple_list_item_1, list);
+<a style="color:#009688">adapter.addHeadView(R.layout.head_view);</a>
+<a style="color:#009688">adapter.addFootView(R.layout.foot_view);</a>
 recyclerView.setAdapter(adapter);
 adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
     @Override
