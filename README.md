@@ -1,21 +1,21 @@
 ## 个人整理的一个工具类的集合，包括一些自定义的View
-### 1. TimeClock.java——>自定义时钟View——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
+### ● TimeClock.java——>自定义时钟View——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
 
 <img src="http://img.blog.csdn.net/20161105231805323" />
 
-### 2. LogUtil.java——>Log日志工具类
-### 3. ScratchCard.java——>刮刮卡效果——>效果图
+### ● LogUtil.java——>Log日志工具类
+### ● ScratchCard.java——>刮刮卡效果——>效果图
 
 <img src="http://img.blog.csdn.net/20161104233422147" width="337px" height="460px" />
 
-### 4. LoadingView.java——>菊花进度——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53143034)——>效果图
+### ● LoadingView.java——>菊花进度——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53143034)——>效果图
 <img src="http://i.imgur.com/PGQ8CIt.gif" />
 
-### 5. WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
+### ● WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
 
 <img width="369px" height="660px" src="http://img.blog.csdn.net/20161118122207199" /> 
 
-### 6. BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)
+### ● BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)
 
 ```
 public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter.BaseViewHolder> {
@@ -46,3 +46,5 @@ adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
     }
 });
 ```
+### ● ScreenSizeUtils.java——>获取手机屏幕大小
+### ● SharePreUtils.java——>SharedPreferences数据存储工具类
