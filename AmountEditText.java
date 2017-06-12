@@ -1,4 +1,4 @@
-package com.zsy.amount;
+package cn.hjtech.pigeon.common.view;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
@@ -12,9 +12,13 @@ import android.util.AttributeSet;
 
 /**
  * 2017年5月29日23:59:32
+ *
  * @author 阿钟
  * @version 1.0
  * TODO 金额输入框，只能输入两位小数
+ *
+ * @version 1.1
+ * TODO 添加文本改变监听
  */
 public class AmountEditText extends AppCompatEditText implements TextWatcher {
 
@@ -56,6 +60,7 @@ public class AmountEditText extends AppCompatEditText implements TextWatcher {
             return null;
         }
     };
+
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         if (TextUtils.isEmpty(s)) {
@@ -74,6 +79,7 @@ public class AmountEditText extends AppCompatEditText implements TextWatcher {
         }
         setSelection(getText().toString().length());
     }
+
     /**
      * 统计一个字符在字符串中出现的次数
      *
@@ -90,13 +96,27 @@ public class AmountEditText extends AppCompatEditText implements TextWatcher {
         }
         return count;
     }
+
     @Override
     public void afterTextChanged(Editable s) {
-
+        if (listener != null) {
+            listener.onTextChanged(getText().toString());
+        }
     }
+
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
     }
 
+    public OnTextChangeListener listener;
+
+    public void setListener(OnTextChangeListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnTextChangeListener {
+
+        void onTextChanged(String s);
+
+    }
 }

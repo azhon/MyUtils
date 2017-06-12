@@ -1,4 +1,4 @@
-﻿## 个人整理的一个工具类的集合，包括一些自定义的View
+## 个人整理的一个工具类的集合，包括一些自定义的View
 ### ● TimeClock.java——>自定义时钟View——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
 
 <img src="http://img.blog.csdn.net/20161105231805323" />
@@ -49,3 +49,14 @@ adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
 ### ● ScreenSizeUtils.java——>获取手机屏幕大小
 ### ● SharePreUtils.java——>SharedPreferences数据存储工具类
 ### ● AmountEditText.java——>只允许输入两位小数的输入框
+```
+//添加文本改变监听
+
+editeText.setListener(new AmountEditText.OnTextChangeListener() {
+    @Override
+    public void onTextChanged(String s) {
+
+        //回调
+    }
+});
+```
