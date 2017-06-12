@@ -51,12 +51,10 @@ adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
 ### ● AmountEditText.java——>只允许输入两位小数的输入框
 ```
 //添加文本改变监听
-
 editeText.setListener(new AmountEditText.OnTextChangeListener() {
     @Override
     public void onTextChanged(String s) {
-
-        //回调
+		//回调
     }
 });
 ```
