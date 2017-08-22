@@ -58,4 +58,4 @@ editeText.setListener(new AmountEditText.OnTextChangeListener() {
     }
 });
 ```
-### ● TimeUtils.java——>时间戳转化为年月日模式
+### ● TimeUtils.java——>时间戳转化为年月日格式
