@@ -59,3 +59,5 @@ editeText.setListener(new AmountEditText.OnTextChangeListener() {
 });
 ```
 ### ● TimeUtils.java——>时间戳转化为年月日格式
+### ● WaveView.java——>水波球——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53143034)——>效果图
+<img src="http://img.blog.csdn.net/20170904215012826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
