@@ -115,10 +115,11 @@ public class WaveView extends View {
         //每次波形的平移量 40
         startPoint.x += 40;
         if (autoIncrement) {
-            if (progress > 100) {
+            if (progress >= 100) {
                 progress = 0;
+            } else {
+                progress++;
             }
-            progress++;
         }
         postInvalidateDelayed(150);
         path.reset();
