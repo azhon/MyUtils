@@ -1,5 +1,6 @@
 package com.azhon.test;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 /*
  * 文件名:    WaveView
@@ -39,6 +41,10 @@ public class WaveView extends View {
     private Point startPoint;
     /*当前进度*/
     private int progress;
+    /*x轴平移量*/
+    private int translateX = 40;
+    /*是否启用了动画设置进度*/
+    private boolean openAnimate = false;
     /*是否自增长*/
     private boolean autoIncrement = true;
 
@@ -110,12 +116,12 @@ public class WaveView extends View {
 
         drawText(canvas, textPaint, progress + "%");
         //判断是不是平移完了一个周期
-        if (startPoint.x + 40 >= 0) {
+        if (startPoint.x + translateX >= 0) {
             //满了一个周期则恢复默认起点继续平移
             startPoint.x = -cycle * 4;
         }
         //每次波形的平移量 40
-        startPoint.x += 40;
+        startPoint.x += translateX;
         if (autoIncrement) {
             if (progress >= 100) {
                 progress = 0;
@@ -123,8 +129,10 @@ public class WaveView extends View {
                 progress++;
             }
         }
-        postInvalidateDelayed(150);
         path.reset();
+        if (!openAnimate) {
+            postInvalidateDelayed(150);
+        }
     }
 
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -215,6 +223,42 @@ public class WaveView extends View {
         this.progress = progress;
         autoIncrement = false;
         invalidate();
+    }
+
+    /**
+     * 设置x轴移动量
+     *
+     * @param translateX 默认40
+     */
+    public void setTranslateX(int translateX) {
+        this.translateX = translateX;
+    }
+
+    /**
+     * 通过动画设置当前进度
+     *
+     * @param progress 进度 <=100
+     * @param duration 动画时长
+     */
+    public void setProgress(final int progress, int duration) {
+        if (progress > 100 || progress < 0)
+            throw new RuntimeException(getClass().getName() + "请设置[0,100]之间的值");
+        autoIncrement = false;
+        openAnimate = true;
+        ValueAnimator progressAnimator = ValueAnimator.ofInt(0, progress);
+        progressAnimator.setDuration(duration);
+        progressAnimator.setTarget(progress);
+        progressAnimator.setInterpolator(new LinearInterpolator());
+        progressAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                WaveView.this.progress = (int) animation.getAnimatedValue();
+                if (WaveView.this.progress == progress)
+                    openAnimate = false;
+                invalidate();
+            }
+        });
+        progressAnimator.start();
     }
 
     public int getProgress() {
