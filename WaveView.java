@@ -15,7 +15,7 @@ import android.view.View;
  * 文件名:    WaveView
  * 创建者:    ZSY
  * 创建时间:  2017/8/29 on 09:10
- * 描述:     TODO 水波纹view
+ * 描述:     TODO 水波纹view 剩余流量球
  */
 public class WaveView extends View {
 
@@ -91,9 +91,11 @@ public class WaveView extends View {
         //循环绘制正弦曲线 循环一次半个周期
         for (int i = 1; i <= 8; i++) {
             if (i % 2 == 0) {
+                //波峰
                 path.quadTo(startPoint.x + (cycle * j), startPoint.y + waveHeight,
                         startPoint.x + (cycle * 2) * i, startPoint.y);
             } else {
+                //波谷
                 path.quadTo(startPoint.x + (cycle * j), startPoint.y - waveHeight,
                         startPoint.x + (cycle * 2) * i, startPoint.y);
             }
@@ -128,7 +130,7 @@ public class WaveView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //获取view的宽度
-        width = getViewSize(800, widthMeasureSpec);
+        width = getViewSize(400, widthMeasureSpec);
         //获取view的高度
         height = getViewSize(400, heightMeasureSpec);
         //默认从屏幕外先绘制3/4个周期 使得波峰在圆中间
