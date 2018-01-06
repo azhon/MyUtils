@@ -61,3 +61,21 @@ editeText.setListener(new AmountEditText.OnTextChangeListener() {
 ### ● TimeUtils.java——>时间戳转化为年月日格式
 ### ● WaveView.java——>水波球——>[使用方法](http://blog.csdn.net/a_zhon/article/details/77842615)——>效果图
 <img src="http://img.blog.csdn.net/20170904215012826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
+
+### ● ActionBarToast.java——>顶部消息弹框——>[使用方法](http://blog.csdn.net/a_zhon/article/details/78988653)——>效果图
+<img src="http://img.blog.csdn.net/20180106002901033?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
+
+```
+ActionBarToast barToast = new ActionBarToast(this);
+barToast.showToast(ActionBarToast.LENGTH_SHORT);
+//barTost.cancel();
+```
+
+### ● MaskView.java——>观看视频开灯/关灯效果——>[使用方法](http://blog.csdn.net/a_zhon/article/details/78988653)——>效果图
+<img src="http://img.blog.csdn.net/20180106002852653?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
+
+```
+MaskView maskView = new MaskView(this);
+maskView.attachView(view);
+//maskView.removeMask();
+```
