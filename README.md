@@ -79,3 +79,6 @@ MaskView maskView = new MaskView(this);
 maskView.attachView(view);
 //maskView.removeMask();
 ```
+
+### ● PhoneEditText.java——>手机号码输入框自动分割——>效果图
+<img src="https://img-blog.csdn.net/20180419203929327?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Ffemhvbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" />
