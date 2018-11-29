@@ -1,7 +1,7 @@
 ## 个人整理的一个工具类的集合，包括一些自定义的View
 ### ● TimeClock.java——>自定义时钟View——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
 
-<img src="http://img.blog.csdn.net/20161105231805323" />
+<img src="https://github.com/azhon/MyUtils/blob/master/effectImage/20161105231805323.gif" />
 
 ### ● LogUtil.java——>Log日志工具类
 ### ● ScratchCard.java——>刮刮卡效果——>效果图
@@ -13,7 +13,7 @@
 
 ### ● WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
 
-<img width="369px" height="660px" src="http://img.blog.csdn.net/20161118122207199" /> 
+<img width="369px" height="660px" src="https://github.com/azhon/MyUtils/blob/master/effectImage/20161118122207199.png" /> 
 
 ### ● BaseRecyclerAdapter.java——>RecyclerView适配器——>[使用方法](http://blog.csdn.net/a_zhon/article/details/66971369)
 
