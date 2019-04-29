@@ -99,4 +99,4 @@ maskView.attachView(view);
 
 ### ● CustomTouchView.java——>自定义滚动View——>效果图
 
-<img src="https://github.com/azhon/MyUtils/blob/master/effectImage/custom_touch_view.gif" />
+<img src="https://github.com/azhon/MyUtils/blob/master/effectImage/custom_touch_view.gif" width="340"/>
