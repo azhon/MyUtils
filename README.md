@@ -1,14 +1,17 @@
 ## 个人整理的一个工具类的集合，包括一些自定义的View
+
 ### ● TimeClock.java——>自定义时钟View——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53027501)——>效果图
 
 <img src="https://github.com/azhon/MyUtils/blob/master/effectImage/20161105231805323.gif" />
 
 ### ● LogUtil.java——>Log日志工具类
+
 ### ● ScratchCard.java——>刮刮卡效果——>效果图
 
 <img src="http://img.blog.csdn.net/20161104233422147" width="337px" height="460px" />
 
 ### ● LoadingView.java——>菊花进度——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53143034)——>效果图
+
 <img src="http://i.imgur.com/PGQ8CIt.gif" />
 
 ### ● WordsNavigation.java——>联系人列表字母索引——>[使用方法](http://blog.csdn.net/a_zhon/article/details/53214849)——>效果图
@@ -29,9 +32,10 @@ public class MyAdapter extends BaseRecyclerAdapter<DataBean, BaseRecyclerAdapter
         holder.setText(android.R.id.text1, data.getName());
     }
 }
-
 ```
+
 ---
+
 ```
 MyAdapter adapter = new MyAdapter(android.R.layout.simple_list_item_1, list);
 //添加头布局
@@ -46,23 +50,31 @@ adapter.setClickListener(new BaseRecyclerAdapter.onItemClickListener() {
     }
 });
 ```
+
 ### ● ScreenSizeUtils.java——>获取手机屏幕大小
+
 ### ● SharePreUtils.java——>SharedPreferences数据存储工具类
+
 ### ● AmountEditText.java——>只允许输入两位小数的输入框
+
 ```
 //添加文本改变监听
 editeText.setListener(new AmountEditText.OnTextChangeListener() {
     @Override
     public void onTextChanged(String s) {
-		//回调
+        //回调
     }
 });
 ```
+
 ### ● TimeUtils.java——>时间戳转化为年月日格式
+
 ### ● WaveView.java——>水波球——>[使用方法](http://blog.csdn.net/a_zhon/article/details/77842615)——>效果图
+
 <img src="http://img.blog.csdn.net/20170904215012826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
 
 ### ● ActionBarToast.java——>顶部消息弹框——>[使用方法](http://blog.csdn.net/a_zhon/article/details/78988653)——>效果图
+
 <img src="http://img.blog.csdn.net/20180106002901033?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
 
 ```
@@ -72,6 +84,7 @@ barToast.showToast(ActionBarToast.LENGTH_SHORT);
 ```
 
 ### ● MaskView.java——>观看视频开灯/关灯效果——>[使用方法](http://blog.csdn.net/a_zhon/article/details/78988653)——>效果图
+
 <img src="http://img.blog.csdn.net/20180106002852653?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYV96aG9u/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" />
 
 ```
@@ -81,4 +94,9 @@ maskView.attachView(view);
 ```
 
 ### ● PhoneEditText.java——>手机号码输入框自动分割——>效果图
+
 <img src="https://img-blog.csdn.net/20180419203929327?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Ffemhvbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" />
+
+### ● CustomTouchView.java——>自定义滚动View——>效果图
+
+<img src="https://github.com/azhon/MyUtils/blob/master/effectImage/custom_touch_view.gif" />
